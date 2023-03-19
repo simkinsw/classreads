@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import FullLayout from "./layouts/FullLayout";
+import Book from "./views/Book";
+import BookDefault from "./views/BookDefault";
+import Home from "./views/Home";
+import Login from "./views/Login";
+import Profile from "./views/Profile";
+import ProfileDefault from "./views/ProfileDefault";
+import Review from "./views/Review";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Router>
+                <Routes>
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/" element={<FullLayout children={<Home />} />} />
+                    <Route path="/review" element={<FullLayout children={<Review />} />} />
+                    <Route path="/profile" element={<FullLayout children={<ProfileDefault />} />} />
+                    <Route path="/profile/:name" element={<FullLayout children={<Profile />} />} />
+                    <Route path="/book" element={<FullLayout children={<BookDefault />} />} />
+                    <Route path="/book/:title" element={<FullLayout children={<Book />} />} />
+                </Routes>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
