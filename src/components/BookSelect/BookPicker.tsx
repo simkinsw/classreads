@@ -45,7 +45,7 @@ const BookPicker: FC<BookPickerProps> = ({ setOptions, setLoading }) => {
             <h2 className="text-blue-500 font-fredoka text-2xl 2xl:text-3xl mb-4">
                 Search for Books
             </h2>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-col sm:flex-row">
                 <Autocomplete
                     className="flex-1"
                     onChange={(e, val) => handleSubmit(val)}
@@ -72,7 +72,7 @@ const BookPicker: FC<BookPickerProps> = ({ setOptions, setLoading }) => {
                                 <input 
                                     {...params.inputProps}
                                     type="text" 
-                                    className="w-full pr-8 pl-4 py-3 rounded text-2xl focus:shadow outline-none border-2 border-gray-300 focus:border-blue-500" 
+                                    className="w-full pr-8 pl-2 sm:pl-4 py-3 rounded text-lg sm:text-2xl focus:shadow outline-none border-2 border-gray-300 focus:border-blue-500" 
                                     placeholder="Enter a Title" 
                                 />
                             </div>

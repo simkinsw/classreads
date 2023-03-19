@@ -23,7 +23,7 @@ const SideNavLink: FC<SideNavLinkProps> = ({ icon, text, path, active }) => {
             }
         >
             {icon}
-            {text}
+            <span className="hidden sm:inline-block">{text}</span>
         </Link>
     )
 }

@@ -28,13 +28,13 @@ const AvatarSelectModal: FC<AvatarSelectModalProps> = ({ isOpen, closeModal, use
         const cur = selection === i;
         avatars.push(
             <li 
-                className={"hover:bg-gray-100 py-2 2xl:py-4 flex justify-center rounded-md border-2" + 
+                className={"hover:bg-gray-100 py-2 flex justify-center rounded-md border-2" + 
                     (cur ? " bg-gray-100 border-black" : " border-transparent")}
                 onClick={() => setSelection(i)}
                 key={i}
             >
                 <img 
-                    className="w-20 h-20 2xl:w-24 2xl:h-24 rounded-full"
+                    className="w-14 h-14 sm:w-20 sm:h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 rounded-full"
                     src={require(`../../assets/avatars/avatar${i}.png`)} 
                     alt="" 
                 />
@@ -44,7 +44,7 @@ const AvatarSelectModal: FC<AvatarSelectModalProps> = ({ isOpen, closeModal, use
 
     return (
         <ReactModal
-            className="w-auto p-8 my-20 2xl:my-32 mx-20 xl:mx-[24rem] 2xl:mx-[38rem] bg-white rounded-md relative"
+            className="mx-4 sm:w-[450px] md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px] p-4 sm:p-8 my-12 2xl:my-24 sm:mx-auto bg-white rounded-md relative"
             ariaHideApp={false}
             onRequestClose={closeModal}
             style={{
@@ -57,7 +57,7 @@ const AvatarSelectModal: FC<AvatarSelectModalProps> = ({ isOpen, closeModal, use
             }}
             isOpen={isOpen}
         >
-            <div className="text-4xl text-blue-500 font-fredoka mb-6">
+            <div className="text-3xl sm:text-4xl text-blue-500 font-fredoka mb-6">
                 Select an Avatar
             </div>
             <ul className="grid grid-cols-4 cursor-pointer">

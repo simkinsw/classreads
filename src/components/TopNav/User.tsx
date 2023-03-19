@@ -25,7 +25,7 @@ const User = () => {
                 className="flex justify-end items-center gap-3 text-2xl cursor-pointer"
                 onClick={() => setShowDropdown(!showDropdown)}
             >
-                <span className="">
+                <span className="hidden sm:inline-block">
                     {user}
                 </span>
                 <Avatar user={user} /> 

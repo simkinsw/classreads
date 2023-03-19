@@ -14,7 +14,7 @@ const ProfileDefault = () => {
 
     return (
         <main className="pb-8 flex-1">
-            <ul className="grid grid-cols-4 2xl:grid-cols-5 gap-x-4 lg:gap-x-6 gap-y-4 lg:gap-y-6">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 2xl:grid-cols-5 gap-x-4 lg:gap-x-6 gap-y-4 lg:gap-y-6">
                 {
                     studentList.map((student) => {
                         const longName = student.length > 11;

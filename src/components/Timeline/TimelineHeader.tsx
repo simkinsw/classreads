@@ -30,13 +30,13 @@ const TimelineHeader: FC<TimelineHeaderProps> = ({ setIndex, setDir }) => {
     return (
         <header className="flex justify-end gap-2 items-center -mb-4">
             <Link 
-                className="bg-blue-500 hover:bg-blue-700 text-white text-xl text-center font-bold py-3 px-4 mr-auto rounded flex lg:hidden items-center justify-center"
+                className="bg-blue-500 hover:bg-blue-700 text-white text-md sm:text-xl text-center font-bold p-1 sm:py-3 sm:px-4 mr-auto rounded flex lg:hidden items-center justify-center"
                 to="/review"
             >
-                <BsPencilSquare className="mr-2 w-6 h-6 mt-0.5" />  
+                <BsPencilSquare className="mr-2 w-6 h-6 mt-0.5 hidden sm:block" />  
                 Post a Review
             </Link>
-            <h2 className="font-bold text-xl pr-2">
+            <h2 className="font-bold text-xl pr-2 hidden sm:inline-block">
                 Sort By:
             </h2>
             <ul className="flex gap-2">
@@ -90,7 +90,7 @@ const SortBox: FC<SortBoxProps> = ({ text, icon, index, active, dir, clickHandle
                 onClick={handleClick}
             >
                 {icon}
-                {text}
+                <span className="hidden md:inline-block">{text}</span>
                 {dir === 1 ? <AiOutlineArrowUp className={"w-5 h-5" + (!active && " fill-white")} /> : <AiOutlineArrowDown className={"w-5 h-5" + (!active && " fill-white")} />}
             </div>
         </li>

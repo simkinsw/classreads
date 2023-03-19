@@ -16,12 +16,12 @@ type TopNavProps = {
 const TopNav: FC<TopNavProps> = ({ fullNav = true }) => {
     const path = useLocation();
     const current = path.pathname.split("/")[1];
-    const iconClass = "w-4 h-4";
+    const iconClass = "w-6 h-6 sm:w-4 sm:h-4";
 
     return (
         <div className="fixed z-20 w-screen h-20 shadow-lg bg-gray-50 flex items-center">
             <div className="container mx-auto flex items-center">
-                <Link className={(!fullNav ? "sm:inline-block " : "") +`hidden xl:inline-block`} to="/">
+                <Link className={(!fullNav ? "inline-block" : "hidden") + " xl:inline-block"} to="/">
                     <img 
                         className="h-7 w-full"
                         src={Logo} 
@@ -29,7 +29,7 @@ const TopNav: FC<TopNavProps> = ({ fullNav = true }) => {
                     />
                 </Link>
                 {fullNav &&
-                    <section className="flex gap-2 xl:hidden self-end">
+                    <section className="flex gap-3 sm:gap-2 xl:hidden self-end">
                         <SideNavLink icon={<AiOutlineHome className={iconClass} />} text="Feed" path="/" active={current === ""} />
                         <SideNavLink icon={<HiOutlinePencilSquare className={iconClass} />} text="Review" path="/review" active={current === "review"} />
                         <SideNavLink icon={<BsPerson className={iconClass} />} text="Friends" path="/profile" active={current === "profile"} />

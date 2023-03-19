@@ -10,19 +10,17 @@ import Review from "./views/Review";
 
 function App() {
     return (
-        <div>
-            <Router>
-                <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/" element={<FullLayout children={<Home />} />} />
-                    <Route path="/review" element={<FullLayout children={<Review />} />} />
-                    <Route path="/profile" element={<FullLayout children={<ProfileDefault />} />} />
-                    <Route path="/profile/:name" element={<FullLayout children={<Profile />} />} />
-                    <Route path="/book" element={<FullLayout children={<BookDefault />} />} />
-                    <Route path="/book/:title" element={<FullLayout children={<Book />} />} />
-                </Routes>
-            </Router>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<FullLayout children={<Home />} />} />
+                <Route path="/review" element={<FullLayout children={<Review />} />} />
+                <Route path="/profile" element={<FullLayout children={<ProfileDefault />} />} />
+                <Route path="/profile/:name" element={<FullLayout children={<Profile />} />} />
+                <Route path="/book" element={<FullLayout children={<BookDefault />} />} />
+                <Route path="/book/:title" element={<FullLayout children={<Book />} />} />
+            </Routes>
+        </Router>
     );
 }
 

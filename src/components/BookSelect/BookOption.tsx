@@ -21,7 +21,7 @@ const BookOption: FC<BookOptionProps> = ({ setBook, book }) => {
                 <span className="text-xl 2xl:text-2xl mb-1">{book.title}</span>
                 <span className="text-lg italic">by {book.author ?? "unknown"}</span>
             </div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-4 px-4 ml-4 rounded">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white text-xl font-bold py-4 px-4 ml-4 rounded hidden sm:inline-block">
                 Review
             </button>
         </li>

@@ -25,10 +25,12 @@ const ReviewCard: FC<ReviewCardProps> = ({ review }) => {
     }
 
     return (
-        <div className="bg-white rounded-md shadow-md p-6 2xl:p-8 flex flex-col relative">
-            <div className="flex items-center mb-2">
+        <div className="bg-white rounded-md shadow-md p-3 sm:p-6 2xl:p-8 flex flex-col relative">
+            <div className="flex flex-col sm:flex-row items-center mb-2">
                 <ReviewHeader book={review.book} />
-                <StarRating stars={review.stars} readOnly={true} fontSize={starSize} />
+                <div className="mt-4 sm:mt-0 ">
+                    <StarRating stars={review.stars} readOnly={true} fontSize={starSize} />
+                </div>
             </div>
             <div className="pt-4 pb-2">
                 {review.reviewText}
@@ -37,7 +39,7 @@ const ReviewCard: FC<ReviewCardProps> = ({ review }) => {
                 to={`/review?title=${review.book.title}`}
                 className="2xl:text-lg text-blue-500 flex justify-end gap-2 items-center cursor-pointer border-b border-gray-300 pb-3"
             >
-                <span>Review this book</span>
+                <span className="hidden sm:inline-block">Review this book</span>
                 <BsPencilSquare className="mt-.5" />
             </Link>
             <div className="flex gap-2 items-center pt-4">

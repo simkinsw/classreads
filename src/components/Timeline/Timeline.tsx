@@ -50,7 +50,7 @@ const Timeline: FC<TimelineProps> = ({ reviews, loading }) => {
     if (!loading && sortedReviews.length === 0) return <div className="flex flex-col flex-1 gap-8 pb-12 relative z-10 text-xl">No reviews posted yet.</div>
 
     return (
-        <section id="timeline" className="flex flex-col flex-1 gap-8 pb-12 relative z-10">
+        <section id="timeline" className="flex flex-col flex-1 gap-6 sm:gap-8 pb-12 relative z-10">
             <LoadingElement loading={loading}>
                 <>
                 <TimelineHeader 

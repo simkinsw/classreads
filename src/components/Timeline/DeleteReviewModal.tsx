@@ -31,7 +31,7 @@ const DeleteReviewModal: FC<DeleteReviewModalProps> = ({ review, isOpen, closeMo
 
     return (
         <ReactModal
-            className="w-auto p-8 my-20 2xl:my-32 mx-20 xl:mx-[24rem] 2xl:mx-[38rem] bg-white rounded-md relative"
+            className="p-8 my-20 2xl:my-32 mx-2 sm:mx-auto sm:w-2/3 lg:w-1/2 xl:w-2/5 bg-white rounded-md relative"
             ariaHideApp={false}
             onRequestClose={closeModal}
             style={{
@@ -39,8 +39,7 @@ const DeleteReviewModal: FC<DeleteReviewModalProps> = ({ review, isOpen, closeMo
                     backgroundColor: "rgba(0, 0, 0, .4)"
                 },
                 content: {
-                    outline: "none",
-                    height: "15rem"
+                    outline: "none"
                 }
             }}
             isOpen={isOpen}

@@ -27,7 +27,7 @@ const Login = () => {
     return (
         <>
         <TopNav fullNav={false} />
-        <div className="bg-gray-100 min-h-screen w-full">
+        <div className="sm:bg-gray-100 min-h-screen w-full">
             <main className="container mx-auto">
                 {
                     !classCode ?
