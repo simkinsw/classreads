@@ -15,7 +15,6 @@ const Login = () => {
     const login = (user: User) => {
         setUser(user.name);
         setTeacher(user.type === "teacher");
-        setClassCode(classCode.replace("teacher", ""))
     }
 
     useEffect(() => {

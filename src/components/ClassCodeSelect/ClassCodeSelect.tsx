@@ -1,4 +1,5 @@
 import { FC, FormEvent, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import classData from "../../data/classData";
 
 type ClassCodeSelectProps = {
@@ -8,12 +9,15 @@ type ClassCodeSelectProps = {
 const ClassCodeSelect: FC<ClassCodeSelectProps> = ({ setCode }) => {
     const [text, setText] = useState("");
     const [validCode, setValidCode] = useState(true);
+    const [, setTeacher] = useLocalStorage("teacher", false)
 
     const handleSubmit = (event?: FormEvent<HTMLFormElement>) => {
         if(event) event.preventDefault();
         const newCode = text.toLowerCase();
         if(classData.has(newCode)) {
-            setCode(text.toLowerCase());
+            setTeacher(newCode.includes("teacher"));
+            console.log(newCode.includes("teacher"))
+            setCode(text.toLowerCase().replace("teacher", ""));
         } else {
             setValidCode(false);
             setText("");

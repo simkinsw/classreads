@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useReadLocalStorage } from "usehooks-ts";
 import classData, { User } from "../../data/classData";
 import StudentCard from "./StudentCard";
 
@@ -10,9 +11,10 @@ type StudentSelectProps = {
 }
 
 const StudentSelect: FC<StudentSelectProps> = ({ resetClassCode, setUser, classCode }) => {
-    const studentList = classData.get(classCode)!;
+    const isTeacher = useReadLocalStorage<boolean>("teacher") ?? false;
+    const studentList = classData.get(classCode + (isTeacher ? "teacher" : ""))!;
 
-    const divClass = classCode.includes("teacher") ? "pt-2 lg:mx-16 2xl:mx-24 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 lg:gap-x-6 gap-y-8"
+    const divClass = isTeacher ? "pt-2 lg:mx-16 2xl:mx-24 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-4 lg:gap-x-6 gap-y-8"
         : "pt-2 lg:mx-16 2xl:mx-24 grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-x-4 lg:gap-x-6 gap-y-2 sm:gap-y-8"
 
     return (
