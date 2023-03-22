@@ -15,8 +15,7 @@ const ClassCodeSelect: FC<ClassCodeSelectProps> = ({ setCode }) => {
         if(event) event.preventDefault();
         const newCode = text.toLowerCase();
         if(classData.has(newCode)) {
-            setTeacher(newCode.includes("teacher"));
-            console.log(newCode.includes("teacher"))
+            setTeacher(newCode.toLowerCase().includes("teacher"));
             setCode(text.toLowerCase().replace("teacher", ""));
         } else {
             setValidCode(false);

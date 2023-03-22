@@ -24,10 +24,11 @@ const classMap: ClassData = new Map<string, User[]>([
 export default classMap;
 
 export const getStudentList = (classCode: string) => {
-    if (!classMap.has(classCode)) return []
+    if (!classMap.has(classCode) || classCode.includes("teacher")) return []
 
     return [
         ...classMap.get(classCode)!.map(student => student.name),
         ...classMap.get(classCode + "teacher")!.map(teacher => teacher.name)
     ]
 }
+
