@@ -18,7 +18,7 @@ export function useCachedGet<T>(path: string, ttl = 300, options = OPTIONS) {
         const cacheKey = path;
         const cached = localStorage.getItem(cacheKey);
         const whenCached = localStorage.getItem(cacheKey + ":ts");
-        if (cached !== null && whenCached !== null) {
+        if (ttl > 0 && cached !== null && whenCached !== null) {
             const age = (Date.now() - parseInt(whenCached)) / 1000;
             if (age < ttl) {
                 setData(JSON.parse(cached) as T);

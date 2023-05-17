@@ -7,7 +7,7 @@ export type User = {
 
 const room211Students = ["Akthar", "Alexa", "Amen", "Aroush", "Aziza", "Bella", "Brian", "Dalila", "Dalilah", "Ella", "Feroza", 
 "Guadalupe", "Gus", "Ibrahim", "Jahzeel", "Janet", "Kamila", "Kawther", "Kimiyai", "Kymbella", "Majidah", "Marcus", "Mashal", 
-"Modade", "Murtuza", "Nur Syairah", "Rachel", "Reem", "Sohila", "Subhan", "Warsan", "Yasmeen"];
+"Modade", "Murtuza", "Nur Syairah", "Rachel", "Reem", "Rodas", "Sohila", "Subhan", "Warsan", "Yasmeen"];
 
 const room211StudentUsers = room211Students.map((name) => {
     return { name, type: "student" }
@@ -18,7 +18,9 @@ const room211TeacherUsers = [{ name: "Ms. DeHaan", type: "teacher" }, { name: "M
 
 const classMap: ClassData = new Map<string, User[]>([
     ["room211", room211StudentUsers],
-    ["room211teacher", room211TeacherUsers]
+    ["room211teacher", room211TeacherUsers],
+    ["dev", [{ name: "Dev User", type: "student"}]],
+    ["devteacher", [{ name: "Dev Teacher", type: "teacher"}]]
 ]);
 
 export default classMap;

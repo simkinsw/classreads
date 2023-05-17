@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import FullLayout from "./layouts/FullLayout";
 import Book from "./views/Book";
 import BookDefault from "./views/BookDefault";
+import DevUserLogin from "./views/DevUserLogin";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import Profile from "./views/Profile";
@@ -19,6 +20,8 @@ function App() {
                 <Route path="/profile/:name" element={<FullLayout children={<Profile />} />} />
                 <Route path="/book" element={<FullLayout children={<BookDefault />} />} />
                 <Route path="/book/:title" element={<FullLayout children={<Book />} />} />
+
+                <Route path="/dev" element={<DevUserLogin />} />
             </Routes>
         </Router>
     );

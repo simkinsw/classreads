@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "classreads-e1361"
-  }
+    "default": "classreads-e1361",
+    "dev": "classreads-e1361"
+  },
+  "targets": {},
+  "etags": {}
 }
